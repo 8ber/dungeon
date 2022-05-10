@@ -1,0 +1,202 @@
+:root {
+    --main-radius:5px;
+    --main-padding:5px;
+    font-family: Tahoma, Verdana, sans-serif;
+    color: rgb(0, 0, 0);
+    background-color: rgb(184, 201, 138);
+    text-align: left;
+}
+
+#ContentContainer {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 0.9fr;
+    grid-template-areas:
+    "logo search-containerFather search-containerFather"
+    "initContainer todosDiv allpostsDiv";
+    grid-gap: 1rem;
+}
+
+#search-containerFather {
+    grid-area: search-containerFather;
+}
+
+#search-container {
+    border-radius: var(--main-radius);
+     display: flex; 
+    justify-content: space-around; 
+    margin-bottom: 15px;
+}
+
+#newsflashContainer {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    border-radius: var(--main-radius);
+    border: 1.5px solid black;
+    background: rgba(238, 252, 211, 0.700);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#newsflashHistory {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    border-radius: var(--main-radius);
+    border: 1.5px solid black;
+    background: rgba(238, 252, 211, 0.700);
+    overflow: auto;
+    width: 100%;
+    height: 70px;
+}
+
+#initContainer {
+    grid-area: initContainer;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+#todosDiv {
+    grid-area: todosDiv;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    display: table;
+}
+
+#allpostsDiv {
+    grid-area: allpostsDiv;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+#logo {
+    grid-area: logo;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    cursor: pointer;
+}
+
+.UserAvatarPic {
+    border: 1px dashed black;
+}
+.UserAvatarDiv {
+    margin: 0px 0px 5px 5px;
+}
+
+.UserBox {     
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    border: 1.5px solid black;
+    background: rgba(238, 252, 211, 0.700);
+    margin-bottom: 15px;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-areas:
+    "UserAvatar subUserBox"
+    "userBoxButtons userBoxButtons";
+    font-size: small;
+}
+
+.subUserBox {
+    display: block;
+    margin: 0px 0px 5px 8px;
+}
+
+.inputs{
+    max-width: 75%;
+}
+
+.labels , #label {
+   display: inline-block;
+   width : 4em;
+}
+
+.userBoxButtons {
+    display: grid;
+    grid-template-columns: 0.33fr 0.33fr 0.33fr;
+    grid-template-areas:
+    "otherDataToggle update delete";
+}
+
+.OtherBox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.todoBox {     
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    border: 1.5px solid black;
+    background: rgba(238, 252, 211, 0.700);
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    margin-bottom: 15px;
+}
+
+.hoverText:hover {
+    color: azure;
+    cursor: pointer;
+}
+
+.postBox {     
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    border: 1.5px solid black;
+    background: rgba(238, 252, 211, 0.700);
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    margin-bottom: 15px;
+}
+
+.boxHeader { 
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    border: 1.5px solid black;
+    border-radius: var(--main-radius);
+    background: rgba(238, 252, 211, 0.700);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+input[type=button] { 
+    border-radius: var(--main-radius);
+    background: Gray;
+    color: white;
+ }
+
+ input[type=text], input[type=search], input[type=email], input[type=number] { 
+    border-radius: var(--main-radius);
+    background: rgb(202, 202, 202);
+    color: black;
+ }
+
+
+
+@media only screen and (max-width: 900px) 
+{
+#ContentContainer {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 5fr 5fr;
+    grid-template-areas:
+    "logo search-containerFather"
+    "initContainer todosDiv"
+    "initContainer allpostsDiv";
+}}
+
+@media only screen and (max-width: 780px) 
+{
+#ContentContainer {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "logo" 
+    "search-containerFather"
+    "initContainer" 
+    "todosDiv"
+    "allpostsDiv";
+}}
+
